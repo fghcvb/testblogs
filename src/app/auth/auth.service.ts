@@ -11,7 +11,6 @@ export class AuthService {
 
   serverUrl = environment.baseUrl;
   errorData: {};
-
   isLoggedIn = false;
 
   constructor(private http: HttpClient) { }
@@ -19,7 +18,7 @@ export class AuthService {
   redirectUrl: string;
 
   login(username: string, password: string) {
-    return this.http.post<any>(`${this.serverUrl}api/login`, {username: username, password: password})
+    return this.http.post<any>(this.serverUrl + 'api/login', {username: username, password: password})
     .pipe(map(user => {
         if (user && user.token) {
           localStorage.setItem('currentUser', JSON.stringify(user));
