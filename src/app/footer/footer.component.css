@@ -4,7 +4,7 @@ h1 {
     text-transform: uppercase;
     text-align: center;
 }
-footer .content{
+.content{
     position: absolute;
     bottom: 0px;
     width:100%;
